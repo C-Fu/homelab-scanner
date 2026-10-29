@@ -1,0 +1,2 @@
+# Generated reports contain live host data and must not be committed.
+homelab-report-*.md
