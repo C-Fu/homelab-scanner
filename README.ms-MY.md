@@ -58,15 +58,17 @@ homelab-scanner/
 ├── homelab-scanner          # executable Linux x86-64 siap bina
 ├── homelab-scanner.py       # skrip sumber mudah alih
 ├── homelab-report-YYYYMMDD-HHMMSS.md
+├── homelab-sample-report-yyyymmdd-hhmmdd.md
 ├── README.md
 └── README.ms-MY.md
 ```
 
 Nama fail laporan mengandungi tarikh dan masa tempatan, contohnya
-`homelab-report-20261029-105726.md`. Setiap kali dijalankan, laporan baharu
+`homelab-report-20250614-093000.md`. Setiap kali dijalankan, laporan baharu
 dicipta dan laporan lama tidak ditimpa. Kedua-dua binari dan skrip sumber
 menggunakan corak nama fail yang sama dan menulis laporan di sebelah fail itu
-secara lalai.
+secara lalai. Laporan yang dijana diabaikan oleh Git; lihat laporan contoh yang
+telah disanitasi untuk format tanpa mendedahkan data hos sebenar.
 
 ## Pemasangan
 
@@ -181,6 +183,10 @@ selepas selesai.
 | `-h`, `--help` | Tunjukkan semua pilihan baris arahan. |
 
 ## Kandungan laporan
+
+Lihat
+[`homelab-sample-report-yyyymmdd-hhmmdd.md`](homelab-sample-report-yyyymmdd-hhmmdd.md)
+untuk contoh fiksyen dan bersih bagi format laporan.
 
 Laporan Markdown yang dijana mengandungi bahagian berikut, bergantung pada apa
 yang tersedia pada hos:

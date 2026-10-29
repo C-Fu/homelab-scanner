@@ -53,14 +53,17 @@ homelab-scanner/
 ├── homelab-scanner          # prebuilt Linux x86-64 executable
 ├── homelab-scanner.py       # portable source script
 ├── homelab-report-YYYYMMDD-HHMMSS.md
+├── homelab-sample-report-yyyymmdd-hhmmdd.md
 ├── README.md
 └── README.ms-MY.md
 ```
 
 The report filename contains the local date and time, for example
-`homelab-report-20261029-105726.md`. Each run creates a new report instead of
+`homelab-report-20250614-093000.md`. Each run creates a new report instead of
 overwriting an older one. Both the binary and the source script use the same
-filename pattern and write the report next to themselves by default.
+filename pattern and write the report next to themselves by default. Generated
+reports are ignored by Git; see the sanitized sample report for the format
+without exposing live host data.
 
 ## Installation
 
@@ -174,6 +177,10 @@ afterwards.
 | `-h`, `--help` | Show all command-line options. |
 
 ## Report contents
+
+See
+[`homelab-sample-report-yyyymmdd-hhmmdd.md`](homelab-sample-report-yyyymmdd-hhmmdd.md)
+for a fictional, sanitized example of the report format.
 
 The generated Markdown report contains these sections, depending on what is
 available on the host:
