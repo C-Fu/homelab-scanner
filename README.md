@@ -54,6 +54,8 @@ homelab-scanner/
 ├── homelab-scanner.py       # portable source script
 ├── homelab-report-YYYYMMDD-HHMMSS.md
 ├── homelab-sample-report-yyyymmdd-hhmmdd.md
+├── RELEASE_NOTES.md
+├── scripts/prepare-release.sh
 ├── README.md
 └── README.ms-MY.md
 ```
@@ -161,6 +163,31 @@ pyinstaller --onefile --clean --noconfirm \
 The resulting executable is `~/homelab-scanner/homelab-scanner`. The `build/`
 directory and `.venv-build/` are temporary build artifacts and can be removed
 afterwards.
+
+### Preparing release assets
+
+Create a versioned binary, tarball and checksum file for a Git release:
+
+```bash
+cd ~/homelab-scanner
+./scripts/prepare-release.sh
+```
+
+This writes the following local files, which are ignored by Git and can be
+uploaded as release assets:
+
+```text
+release/homelab-scanner-v1.1.0-linux-amd64
+release/homelab-scanner-v1.1.0-linux-amd64.tar.gz
+release/SHA256SUMS
+```
+
+Verify the assets with:
+
+```bash
+cd release
+sha256sum -c SHA256SUMS
+```
 
 ### Options
 

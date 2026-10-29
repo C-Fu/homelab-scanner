@@ -1,2 +1,5 @@
 # Generated reports contain live host data and must not be committed.
 homelab-report-*.md
+
+# Local release bundles are uploaded as release assets, not committed.
+/release/

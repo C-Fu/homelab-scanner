@@ -59,6 +59,8 @@ homelab-scanner/
 ├── homelab-scanner.py       # skrip sumber mudah alih
 ├── homelab-report-YYYYMMDD-HHMMSS.md
 ├── homelab-sample-report-yyyymmdd-hhmmdd.md
+├── RELEASE_NOTES.md
+├── scripts/prepare-release.sh
 ├── README.md
 └── README.ms-MY.md
 ```
@@ -167,6 +169,31 @@ pyinstaller --onefile --clean --noconfirm \
 Executable yang terhasil ialah `~/homelab-scanner/homelab-scanner`. Direktori
 `build/` dan `.venv-build/` ialah artifak binaan sementara dan boleh dipadamkan
 selepas selesai.
+
+### Menyediakan artifak release
+
+Cipta binari berversi, tarball dan fail checksum untuk release Git:
+
+```bash
+cd ~/homelab-scanner
+./scripts/prepare-release.sh
+```
+
+Ini menghasilkan fail berikut secara tempatan, yang diabaikan oleh Git dan
+boleh dimuat naik sebagai aset release:
+
+```text
+release/homelab-scanner-v1.1.0-linux-amd64
+release/homelab-scanner-v1.1.0-linux-amd64.tar.gz
+release/SHA256SUMS
+```
+
+Sahkan artifak dengan:
+
+```bash
+cd release
+sha256sum -c SHA256SUMS
+```
 
 ### Pilihan
 
